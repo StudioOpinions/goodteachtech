@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Teach Tech | Future Ready Schools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="background-canvas"></canvas>
+
+    <nav>
+        <div class="logo">Good Teach Tech</div>
+        <div class="links">
+            <a href="#about">Mission</a>
+            <a href="#services">Labs</a>
+            <a href="#contact">Partner</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="hero">
+            <h1 class="hero-text">Empowering <br> <span class="highlight">India's Future</span></h1>
+            <p class="subtitle">Google Powered Schools. Advanced Robotics Labs. Next-Gen Education.</p>
+            <a href="https://wa.me/919030670978" target="_blank" class="cta-button">Transform Your School</a>
+
+
+        </section>
+
+        <section id="about" class="glass-card">
+            <div class="content-wrapper">
+                <h2>Google Powered Education</h2>
+                <p>We enable Indian classrooms to leverage the world's best educational infrastructure. Empowering
+                    teachers, students, and institutions with cloud-native learning solutions.</p>
+            </div>
+        </section>
+
+        <section id="showcase">
+            <div class="scroller">
+                <span class="scrolling-text">ROBOTICS LABS • ARTIFICIAL INTELLIGENCE • MATH SIMULATIONS • GOOGLE
+                    WORKSPACE • CODING WORKSHOPS • SCIENCE HUBS • </span>
+                <span class="scrolling-text">ROBOTICS LABS • ARTIFICIAL INTELLIGENCE • MATH SIMULATIONS • GOOGLE
+                    WORKSPACE • CODING WORKSHOPS • SCIENCE HUBS • </span>
+            </div>
+        </section>
+
+        <section id="labs" class="grid-section">
+            <h2 style="grid-column: 1 / -1; font-size: 3rem; margin-bottom: 2rem;">Our Labs</h2>
+
+            <div class="card glass-card">
+                <h3>Robotics</h3>
+                <p>Drone zones, battle-bots, and automation arms. Hands-on engineering.</p>
+            </div>
+            <div class="card glass-card">
+                <h3>AI & IoT</h3>
+                <p>Smart sensors, neural networks, and computer vision stations.</p>
+            </div>
+            <div class="card glass-card">
+                <h3>Science</h3>
+                <p>Advanced Physics, Chemistry, and Biology infrastructure for next-gen discovery.</p>
+            </div>
+            <div class="card glass-card">
+                <h3>Math</h3>
+                <p>Interactive simulations and geometry visualization tools.</p>
+            </div>
+            <div class="card glass-card">
+                <h3>Coding</h3>
+                <p>High-performance workstations for App Dev, Web3, and Game Development.</p>
+            </div>
+            <div class="card glass-card">
+                <h3>Astronomy</h3>
+                <p>Telescopes and planetarium domes for exploring the cosmos.</p>
+            </div>
+        </section>
+
+        <section id="services" class="grid-section" style="margin-top: 4rem;">
+            <h2 style="grid-column: 1 / -1; font-size: 3rem; margin-bottom: 1rem;">Services</h2>
+            <div class="card glass-card">
+                <h3>Design & Execute</h3>
+                <p>We architect and install everything from scratch.</p>
+            </div>
+            <div class="card glass-card">
+                <h3>Maintain</h3>
+                <p>Annual maintenance contracts to keep labs running perfectly.</p>
+            </div>
+            <div class="card glass-card">
+                <h3>Workshops</h3>
+                <p>Regular seminars by industry experts.</p>
+            </div>
+        </section>
+
+        <section id="make-in-india">
+            <h2>Make in India</h2>
+            <p>Building local capacity with global standards. Fostering innovation right here, for the world.</p>
+
+        </section>
+
+        <section id="contact">
+            <h2>Let's Collaborate</h2>
+            <p>Ready to upgrade your institution?</p>
+
+            <form id="contact-form" class="glass-card">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                </div>
+                <input type="text" id="subject" placeholder="Subject" required>
+                <textarea id="message" rows="5" placeholder="Tell us about your school or requirement..."
+                    required></textarea>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+
+            <div style="margin-top: 2rem;">
+                <p style="margin-bottom: 1rem; opacity: 0.6;">Or chat with us directly</p>
+                <a href="https://wa.me/919030670978" target="_blank" class="whatsapp-button">
+                    <!-- WhatsApp SVG Icon -->
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M17.472 14.382C17.119 14.205 15.396 13.36 15.074 13.25C14.752 13.14 14.518 13.085 14.283 13.438C14.049 13.791 13.382 14.57 13.178 14.805C12.973 15.04 12.769 15.069 12.416 14.893C12.064 14.717 10.929 14.345 9.584 13.146C8.528 12.205 7.816 11.043 7.61 10.69C7.405 10.337 7.589 10.147 7.765 9.972C7.923 9.815 8.116 9.563 8.291 9.358C8.468 9.153 8.526 9.006 8.643 8.771C8.761 8.536 8.702 8.331 8.614 8.154C8.526 7.978 7.823 6.249 7.531 5.549C7.245 4.868 6.956 4.961 6.742 4.97C6.545 4.979 6.32 4.979 6.095 4.979C5.87 4.979 5.503 5.064 5.19 5.407C4.877 5.75 3.99 6.583 3.99 8.277C3.99 9.971 5.223 11.608 5.408 11.853C5.594 12.098 7.859 15.548 11.328 17.046C12.153 17.402 12.797 17.614 13.298 17.773C14.07 18.018 14.775 17.982 15.334 17.899C15.96 17.806 17.258 17.114 17.528 16.35C17.799 15.586 17.799 14.939 17.711 14.792C17.623 14.645 17.389 14.558 17.037 14.382H17.472Z" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M12.052 0.0579987C5.467 0.0579987 0.109001 5.415 0.109001 12C0.109001 14.103 0.655001 16.094 1.621 17.838L0 23.754L6.052 22.169C7.733 23.085 9.645 23.593 11.657 23.593H12.056C18.641 23.593 24 18.236 24 11.651C24 5.066 18.641 -0.291001 12.056 -0.291001L12.052 0.0579987ZM12.052 21.583C10.267 21.583 8.563 21.104 7.072 20.219L6.719 20.01L2.94 21.001L3.949 17.32L3.718 16.952C2.752 15.42 2.195 13.626 2.195 11.706C2.195 6.269 6.619 1.846 12.056 1.846C17.493 1.846 21.917 6.269 21.917 11.706C21.917 17.143 17.493 21.583 12.052 21.583Z" />
+                    </svg>
+                    Connect on WhatsApp
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

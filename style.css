@@ -1,0 +1,361 @@
+:root {
+    --bg-color: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --accent-orange: #FF9933;
+    --accent-green: #138808;
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+#background-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    filter: blur(80px);
+    /* This creates the seamless liquid gradient look */
+    opacity: 0.4;
+    /* Reduced from 0.8 to make it 50% lighter */
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+h1.hero-text {
+    font-size: clamp(3rem, 10vw, 8rem);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+    color: #111;
+}
+
+.highlight {
+    background: linear-gradient(90deg, var(--accent-orange), var(--accent-green));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+}
+
+p.subtitle {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-bottom: 3rem;
+}
+
+/* Layout */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.2);
+    /* Transparent layer */
+    backdrop-filter: blur(15px);
+    /* Smooth glass effect */
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* mix-blend-mode: difference; Removed as requested */
+    /* Cool effect over light/dark backgrounds */
+    color: #111;
+    /* Changed to dark for readability */
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.links a {
+    color: inherit;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: opacity 0.3s;
+}
+
+.links a:hover {
+    opacity: 0.6;
+}
+
+main {
+    padding: 0 5%;
+    padding-top: 15vh;
+}
+
+/* Sections */
+/* Sections */
+section {
+    min-height: auto;
+    /* Removed 80vh forcing */
+    padding: 6rem 0;
+    /* Add padding instead */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 0;
+    /* Tighter layout */
+}
+
+#hero {
+    min-height: 90vh;
+    /* Keep hero tall */
+}
+
+/* Glassmorphism */
+.glass-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+#about h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+#about p {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    max-width: 800px;
+}
+
+/* CTA Button */
+.cta-button {
+    background: #111;
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    /* For safe use with <a> tags */
+    display: inline-block;
+    /* Ensure it respects padding as link */
+    text-align: center;
+    /* Center text if button is wide */
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Showcase Scroller */
+#showcase {
+    min-height: 30vh;
+    overflow: hidden;
+    position: relative;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.scroller {
+    white-space: nowrap;
+    animation: scroll 40s linear infinite;
+    /* Slowed down from 20s */
+}
+
+.scrolling-text {
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.05);
+    /* Very subtle */
+    margin-right: 2rem;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Grid */
+.grid-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.card h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #111;
+    /* Uniform black */
+}
+
+/* Removed specific child colors for uniformity */
+
+/* Make in India */
+#make-in-india {
+    text-align: center;
+    border: 2px solid #eee;
+    border-radius: 30px;
+    padding: 5rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(240, 240, 240, 0.8));
+}
+
+#make-in-india h2 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(90deg, var(--accent-orange), #fff, var(--accent-green));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.1));
+}
+
+/* Contact Form */
+#contact {
+    text-align: center;
+    min-height: 80vh;
+    /* Give it space */
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.form-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: #111;
+    outline: none;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    background: rgba(255, 255, 255, 0.6);
+    border-color: var(--accent-orange);
+}
+
+textarea {
+    resize: vertical;
+}
+
+#contact-form button {
+    align-self: flex-start;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .form-group {
+        grid-template-columns: 1fr;
+    }
+}
+
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #25D366;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 1.1rem;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-button svg {
+    fill: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1.hero-text {
+        font-size: 3.5rem;
+    }
+
+    nav {
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        padding: 1rem;
+    }
+
+    .links {
+        margin-top: 1rem;
+    }
+
+    .links a {
+        margin: 0 10px;
+        color: #111;
+    }
+}
